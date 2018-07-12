@@ -1,7 +1,10 @@
 import db.DBHelper;
+import db.DBManager;
 import models.Administrator;
 import models.Employee;
 import models.Manager;
+
+import java.util.List;
 
 public class Runner {
     public static void main(String[] args) {
@@ -16,5 +19,7 @@ public class Runner {
 
         Administrator administrator2 = new Administrator("Lucy", "BN23739", 22000, manager);
         DBHelper.save(administrator2);
+
+        List<Administrator> administratorList = DBManager.getAdministratorForManager(manager);
     }
 }

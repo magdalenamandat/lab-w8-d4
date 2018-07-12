@@ -1,8 +1,6 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "administrators")
@@ -16,7 +14,8 @@ public class Administrator extends Employee {
 
     public Administrator(){}
 
-    @Column(name="manager")
+    @ManyToOne
+            @JoinColumn(name="manager_id", nullable=false)
     public Manager getManager() {
         return manager;
     }
