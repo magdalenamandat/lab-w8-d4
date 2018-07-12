@@ -1,7 +1,5 @@
 package models;
 
-import sun.jvm.hotspot.memory.Generation;
-
 import javax.persistence.*;
 
 
