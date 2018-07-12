@@ -15,7 +15,7 @@ public class Manager extends Employee {
 
     public Manager(){}
 
-    public Manager(String name, int ni, int salary, int budget, String department) {
+    public Manager(String name, String ni, int salary, int budget, String department) {
         super(name, ni, salary);
         this.budget = budget;
         this.department = department;

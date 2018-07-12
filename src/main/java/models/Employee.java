@@ -9,14 +9,14 @@ import javax.persistence.*;
 public abstract class Employee {
     private int id;
     private String name;
-    private int ni;
+    private String ni;
     private int salary;
 
     public Employee() {
 
     }
 
-    public Employee(String name, int ni, int salary) {
+    public Employee(String name, String ni, int salary) {
         this.name = name;
         this.ni = ni;
         this.salary = salary;
