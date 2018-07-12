@@ -8,12 +8,12 @@ import java.util.List;
 @Table(name="managers")
 public class Manager extends Employee {
     private int budget;
-    private String department;
+    private Department department;
     private List<Administrator> administrators;
 
     public Manager(){}
 
-    public Manager(String name, String ni, int salary, int budget, String department) {
+    public Manager(String name, String ni, int salary, int budget, Department department) {
         super(name, ni, salary);
         this.budget = budget;
         this.department = department;
@@ -28,12 +28,13 @@ public class Manager extends Employee {
     public void setBudget(int budget) {
         this.budget = budget;
     }
-    @Column(name="department")
-    public String getDepartment() {
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="department_id", nullable = false)
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
     @OneToMany(mappedBy ="manager", fetch = FetchType.LAZY)

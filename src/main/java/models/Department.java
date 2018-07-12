@@ -12,10 +12,8 @@ public class Department {
     public Department() {
     }
 
-    public Department(int id, String title, Manager manager) {
-        this.id = id;
+    public Department(String title) {
         this.title = title;
-        this.manager = manager;
     }
 
     @Id
@@ -38,7 +36,8 @@ public class Department {
         this.title = title;
     }
 
-    @Column(name = "manager")
+    @OneToOne(mappedBy = "department", fetch = FetchType.LAZY)
+    @JoinColumn(name="manager_id", nullable = false)
     public Manager getManager() {
         return manager;
     }
