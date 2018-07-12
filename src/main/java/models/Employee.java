@@ -43,11 +43,11 @@ public abstract class Employee {
     }
 
     @Column(name = "ni")
-    public int getNi() {
+    public String getNi() {
         return ni;
     }
 
-    public void setNi(int ni) {
+    public void setNi(String ni) {
         this.ni = ni;
     }
 
